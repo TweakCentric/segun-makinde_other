@@ -4,37 +4,39 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
+import logo from "@/public/segun_logo.png"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#1a2e44] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+    <header className="container mx-auto px-4 sm:px-24 py-4 text-white mt-8">
+      <div className="bg-[#0E2A45] px-4 sm:px-8 py-4 rounded-[36px]">
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <div className="text-2xl sm:text-3xl font-bold">OMM</div>
+            <Image src={logo} alt='logo' width={120}/>
           </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="hover:text-[#c8a55c] transition-colors">
+            <Link href="#about" className="hover:text-[#AB832B] transition-colors">
               About
             </Link>
-            <Link href="#services" className="hover:text-[#c8a55c] transition-colors">
+            <Link href="#services" className="hover:text-[#AB832B] transition-colors">
               Services
             </Link>
-            <Link href="#blog" className="hover:text-[#c8a55c] transition-colors">
+            <Link href="#blog" className="hover:text-[#AB832B] transition-colors">
               Blog
             </Link>
           </div>
 
           <div className="flex items-center space-x-4">
-            <Button size="default" className="hidden sm:block">
+            <Button size="lg" className="hidden text-[#0E2A45] bg-white rounded-full h-12 font-semibold text-lg cursor-pointer sm:block">
               Book a Meeting
             </Button>
             
-            <Button size="sm" className="sm:hidden">
+            <Button size="sm" className="sm:hidden text-[#0E2A45] bg-white rounded-full">
               Book
             </Button>
 
