@@ -1,13 +1,11 @@
 "use client"
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import { useState } from "react"
+import { Plus } from "lucide-react"
 
 export default function FAQSection() {
+  const [openItems, setOpenItems] = useState<number[]>([])
+
   const faqs = [
     {
       question: "Who is Segun Makinde, and what makes his approach unique?",
@@ -47,26 +45,64 @@ export default function FAQSection() {
     },
   ];
 
-  return (
-    <section className="bg-white py-12 sm:py-16 md:py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-[#1a2e44] mb-8 sm:mb-12">
-          Frequently Asked Questions
-        </h2>
+  const toggleItem = (index: number) => {
+    setOpenItems(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    )
+  }
 
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-[#1a2e44] font-medium text-sm sm:text-base">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 text-xs sm:text-sm">
+  const leftColumn = faqs.filter((_, i) => i % 2 === 0)
+  const rightColumn = faqs.filter((_, i) => i % 2 === 1)
+
+  const AccordionItem = ({ faq, index }: { faq: typeof faqs[0], index: number }) => {
+    const isOpen = openItems.includes(index)
+    
+    return (
+      <div className="mb-4">
+        <button
+          onClick={() => toggleItem(index)}
+          className="w-full flex items-start gap-4 p-6 bg-white shadow-lg cursor-pointer text-left hover:bg-gray-100 transition-colors"
+        >
+          <Plus 
+            className={`w-6 h-6 text-gray-600 shrink-0 mt-0.5 transition-transform ${isOpen ? 'rotate-45' : ''}`}
+          />
+          <div className="flex-1">
+            <h3 className="text-[#1B1139] font-medium md:text-[19px] leading-relaxed">
+              {faq.question}
+            </h3>
+            {isOpen && (
+              <p className="text-[#1B1139] text-sm leading-relaxed mt-4">
                 {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+              </p>
+            )}
+          </div>
+        </button>
       </div>
+    )
+  }
+
+  return (
+    <section className="py-12 sm:py-16 md:py-20 container mx-auto px-4 sm:px-24">
+        <div className="text-center mb-16">
+          <h2 className="text-[25px] md:text-4xl font-bold text-[#1E1E1E]">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <div>
+            {leftColumn.map((faq, i) => (
+              <AccordionItem key={i * 2} faq={faq} index={i * 2} />
+            ))}
+          </div>
+          <div>
+            {rightColumn.map((faq, i) => (
+              <AccordionItem key={i * 2 + 1} faq={faq} index={i * 2 + 1} />
+            ))}
+          </div>
+        </div>
     </section>
-  );
+  )
 }

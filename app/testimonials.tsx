@@ -40,14 +40,14 @@ export default function Testimonials() {
 
         @media (max-width: 768px) {
           .scroll {
-            animation-duration: 15s;
+            animation-duration: 24s;
           }
         }
       `}</style>
 
       <section className="py-12 sm:py-16 md:py-20 container mx-auto px-4 sm:px-24">
         <div className="text-center mb-16">
-          <h2 className="text-[25px] md:text-4xl font-bold text-gray-800">What My Clients Say</h2>
+          <h2 className="text-[25px] md:text-4xl font-bold text-[#1E1E1E]">What My Clients Say</h2>
         </div>
 
         <div className="overflow-hidden relative [mask:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">

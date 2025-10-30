@@ -13,14 +13,14 @@ export default function AboutSection() {
             </div>
             <span className="text-sm font-light text-[20px]">About</span>
           </div>
-          <h2 className="text-2xl sm:text-[32px] md:text-[34px] font-bold text-[#1a2e44] px-4 max-w-[500px]">
+          <h2 className="text-2xl sm:text-[32px] md:text-[34px] font-bold text-[#1a2e44] max-w-[500px]">
             A Financial Strategist with a Mission, and a Track Record
           </h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4 md:gap-8">
           <div className="md:col-span-1">
-            <Image src={segun} alt="Segun's photo" className="h-126"/>
+            <Image src={segun} alt="Segun's photo" className="md:h-126"/>
           </div>
 
             <div className="md:col-span-2">
