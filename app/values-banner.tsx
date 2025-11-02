@@ -26,8 +26,9 @@ export default function ValuesBanner() {
         }
       `}</style>
 
-      <div className="bg-[#c8a55c] text-white mt-20 overflow-hidden">
-        <div className="py-3 sm:py-4">
+      {/* Gold Banner */}
+      <div className="bg-[#c8a55c] text-white mb-26 mt-20 overflow-hidden relative z-10">
+        <div className="py-3 sm:py-10">
           <div className="flex items-center justify-center whitespace-nowrap">
             <div className="scrolling space-x-8 sm:space-x-16 text-[18px] sm:text-[26px] font-medium">
               {/* duplicate spans twice for smooth infinite scroll */}
@@ -44,6 +45,15 @@ export default function ValuesBanner() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Blue Background Section with Image */}
+      <div 
+        className="-mt-45 sm:-mt-50 bg-cover bg-center bg-no-repeat h-[100px] sm:h-[280px]"
+        style={{
+          backgroundImage: "url('/blue_skew.png')"
+        }}
+      >
       </div>
     </>
   );
