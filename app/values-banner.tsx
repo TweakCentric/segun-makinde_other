@@ -3,7 +3,7 @@
 export default function ValuesBanner() {
   return (
     <>
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{__html: `
         @keyframes move-left {
           0% {
             transform: translateX(0);
@@ -24,7 +24,7 @@ export default function ValuesBanner() {
             animation-duration: 15s;
           }
         }
-      `}</style>
+      `}} />
 
       {/* Gold Banner */}
       <div className="bg-[#c8a55c] text-white mb-26 mt-28 overflow-hidden relative z-10">
