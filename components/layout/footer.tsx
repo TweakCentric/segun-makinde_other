@@ -38,23 +38,23 @@ export default function Footer() {
             <div className='flex flex-col gap-10'>
               <div className="flex items-center space-x-8">
                 <Link 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/oluwasegun-michael-makinde-8a975b60" 
                   target="_blank"
-                  className="hover:text-[#c8a55c] transition-colors size-9"
+                  className="hover:text-[#c8a55c] transition-colors size-9 hover:scale-105"
                 >
                   <Image src={linkedin} alt='linkedin' />
                 </Link>
                 <Link 
                   href="https://facebook.com" 
                   target="_blank"
-                  className="hover:text-[#c8a55c] transition-colors size-8"
+                  className="hover:text-[#c8a55c] transition-colors size-8 hover:scale-105"
                 >
                   <Image src={facebook} alt='facebook' />
                 </Link>
                 <Link 
                   href="https://youtube.com" 
                   target="_blank"
-                  className="hover:text-[#c8a55c] transition-colors size-9"
+                  className="hover:text-[#c8a55c] transition-colors size-9 hover:scale-105"
                 >
                   <Image src={youtube} alt='youtube' />
                 </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div className="border border-gray-300 p-6 sm:p-8 flex items-center justify-center flex-col rounded-lg max-w-md">
-            <div className='max-w-[300px] mb-8'>
+            <div className='max-w-75 mb-8'>
               <h3 className="text-xl sm:text-2xl text-center font-bold">
                 Makinde on Money Weekly Digest
               </h3>

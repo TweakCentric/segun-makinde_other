@@ -35,13 +35,13 @@ export default function ProfessionalSection() {
 
         <Card className="bg-[#AB832B] text-white flex flex-col justify-center p-6 items-center rounded-2xl">
           <CardContent className="space-y-8">
-            <h2 className="text-[24px] md:text-[36px] font-bold mb-4 text-white">Who I serve</h2>
+            <h2 className="text-[24px] md:text-[36px] font-bold mb-4 text-white">Who I Serve</h2>
 
             <ul className="space-y-4">
               {whoIServe.map((item, index) => (
                 <li key={index} className="flex items-start gap-6">
-                  <div className="bg-[#0E2A45] rounded-full flex justify-center items-center p-1">
-                      <Image src={arrow} alt="arrow" className="size-5 md:size-8"/>
+                  <div className="bg-[#0E2A45] rounded-full flex justify-center items-center p-1 shrink-0 w-7 h-7 md:w-10 md:h-10">
+                      <Image src={arrow} alt="arrow" className="w-4 h-4 md:w-6 md:h-6"/>
                   </div>
                   <span className="text-[15px] md:text-[20px]">{item}</span>
                 </li>
@@ -65,8 +65,8 @@ export default function ProfessionalSection() {
             <ul className="space-y-4 md:space-y-10">
               {whyTrustMe.map((item, index) => (
                 <li key={index} className="flex items-start gap-6">
-                  <div className="bg-[#AB832B] rounded-full flex justify-center items-center p-1">
-                    <Image src={arrow} alt="arrow" className="size-5 md:size-8"/>
+                  <div className="bg-[#AB832B] rounded-full flex justify-center items-center p-1 shrink-0 w-7 h-7 md:w-10 md:h-10">
+                    <Image src={arrow} alt="arrow" className="w-4 h-4 md:w-6 md:h-6"/>
                   </div>
                   <span className="text-[15px] md:text-[20px]">{item}</span>
                 </li>
